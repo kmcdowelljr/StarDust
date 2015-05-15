@@ -30,26 +30,29 @@ public:
     // Player Data Record
     //-->
     struct player_data{
-     int         player_level = 1;
-     std::string player_Name="Empty";
-    }*player_data[MAXPLAYERLIST];
+     int         player_level;
+     std::string player_Name;
+    }*p_data[6];
 
-    int initialize_PlayerRecord(player_data);
+    int initialize_PlayerRecord(player_data p_data); // Initialize the game player records
 
-private:
-     player_data *p_data[];
+
 
 };
-
-int player_Object::initialize_PlayerRecord(player_data) {
+//-----------------------------------------------------------------------
+// Purpose:
+//         Iterate the number of Maxplayers to initialize each player record
+//
+// Return:
+//        Record an initialized player_data record
+//-----------------------------------------------------------------------
+int player_Object::initialize_PlayerRecord(player_data p_data) {
     // Initialize the player record first
-    player_data temp;
-    for ( int z = 0; z < MAXPLAYERLIST; z++)
-    {
-        temp[z].player_Name   = "Empy";
-        temp[z].player_level  = 1;
-    }
-    return 0;
+
+   BOOST_FOREACH(int z, p_data){
+                   p_data.player_level = 1;
+                   p_data.player_Name  = "Empty";
+               }
 }
 
 #endif //TEST_GAME_PLAYER_Hint
