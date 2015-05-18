@@ -49,10 +49,11 @@ public:
 int player_Object::initialize_PlayerRecord(player_data p_data) {
     // Initialize the player record first
 
-   BOOST_FOREACH(int z, p_data){
-                   p_data.player_level = 1;
-                   p_data.player_Name  = "Empty";
-               }
+    for (int z =0; z <MAXPLAYERLIST; z++)
+    {
+
+    }
 }
+
 
 #endif //TEST_GAME_PLAYER_Hint

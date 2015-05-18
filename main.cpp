@@ -1,16 +1,22 @@
 # include <boost/version.hpp>
 #include <iostream>
+#include "Headers/game_StarDust.h"
 #include "Headers/game_defines.h"
 //#include "game_file.h"
 #include "Headers/gmae_tools.h"
 #include "Headers/game_menus.h"
-#include "Headers/game_player.h"
+//#include "Headers/game_player.h"
 
 
 extern "C" {
 # include "lua.h"
 # include "lauxlib.h"
 # include "lualib.h"
+}
+
+extern "C" {
+# include <Sqlite/sqlite3.h>
+# include <Sqlite/sqlite3ext.h>
 }
 using namespace std;
 
